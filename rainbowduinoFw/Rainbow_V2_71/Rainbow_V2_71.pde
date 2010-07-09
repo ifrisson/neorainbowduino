@@ -100,7 +100,7 @@ void receiveEvent(int howMany)
 {
   if (cmdsession>4) {
     //oops!
-    cmdsession=0;
+    return;
   }
   unsigned char i=0;
   while(Wire.available()>0 && i<32) { 
