@@ -8,7 +8,7 @@
 #define BAUD_RATE 57600
 //115200
 
-#define CLEARCOL 51 //00110011
+#define CLEARCOL 164
 
 //some magic numberes
 #define CMD_START_BYTE  0x01
@@ -49,17 +49,23 @@ int send_initial_image(byte i2caddr) {
   memset(serInStr, CLEARCOL, 128);
 
   //draw i2c addr as led pixels
-  float tail = i2caddr/2.0f;
-  int tail2 = (int)(tail);
+  float tail = (i2caddr*3)/2.0f;
   boolean useTail = (tail-(int)(tail))!=0;			
+    			
+  //red pixel buffer example for i2c addr 0x03:
+  //11110000 00001111 00000000 11110000 0000----  
+  //240      15	      0        240      &15 (clear 4 highbits)
 
-  //buffer: 32b RED, 32b GREEN, 32b BLUE
   int ofs=0;
-  for (int i=0; i<tail2; i++) {
-    serInStr[ofs++]=255;
+  for (int i=0; i<i2caddr/2; i++) {
+    //Write 2 pixels // 24bits // 3bytes
+    serInStr[ofs++]=240;
+    serInStr[ofs++]=15;
+    serInStr[ofs++]=0;
   }
   if (useTail) {
-    serInStr[ofs++]=243;
+    serInStr[ofs++]=240;
+    serInStr[ofs++]=CLEARCOL&15;
   }
   
   return BlinkM_sendBuffer(i2caddr, serInStr);
@@ -88,12 +94,8 @@ void setup() {
 void loop()
 {
   //read the serial port and create a string out of what you read
-  
-  // see if we got a proper command string yet
-  if (readCommand(serInStr) == 0) {
-    delay(10); 
+  if( readCommand(serInStr) == 0 )   // see if we got a proper command string yet
     return;
-  }
 
   //i2c addres of device
   byte addr    = serInStr[1];
@@ -125,7 +127,7 @@ void loop()
 //returns number of bytes read, or zero if fail
 /* example ping command:
 		cmdfull[0] = START_OF_CMD (marker);
-		cmdfull[1] = addr;
+		cmdfull[1] = addr; //unused yet!
 		cmdfull[2] = 0x01; 
 		cmdfull[3] = CMD_PING;
 		cmdfull[4] = START_OF_DATA (marker);
@@ -135,65 +137,56 @@ void loop()
 #define HEADER_SIZE 5
 uint8_t readCommand(byte *str)
 {
-  uint8_t b,i,sendlen;
+  uint8_t b,i;
+  if( ! Serial.available() ) 
+    return 0;  // wait for serial
 
-  //wait until we get a CMD_START_BYTE or queue is empty
-  i=0;
-  while (Serial.available()>0 && i==0) {
-    b = Serial.read();
-    if (b == CMD_START_BYTE) {
-      i=1;
-    }
-  }
-
-  if (i==0) {
+  b = Serial.read();
+  if( b != CMD_START_BYTE ) {        // check to see we're at the start
     errorCounter++;
-    return 0;    
+    return 0;
   }
 
-//read header  
+  str[0] = b;
   i = SERIAL_WAIT_TIME_IN_MS;
-  while (Serial.available() < HEADER_SIZE-1) {   // wait for the rest
+  while( Serial.available() < 4 ) {   // wait for the rest
     delay(1); 
     if( i-- == 0 ) {
       errorCounter++;
       return 0;        // get out if takes too long
     }
   }
-  for (i=1; i<HEADER_SIZE; i++)
+  for( i=1; i<HEADER_SIZE; i++)
     str[i] = Serial.read();       // fill it up
-  
-  //check sendlen
-  sendlen = str[2];
+
+  uint8_t sendlen = str[2];
   if( sendlen == 0 ) {
     errorCounter++;
     return 0;
   }
   
   //check if data is correct, 0x10 = START_OF_DATA
-  b = str[4];
-  if ( b != 0x10 ) {
+  uint8_t dataStartMarker = str[4];
+  if( dataStartMarker != 0x10 ) {
     errorCounter++;
     return 0;
   }
   
-//read data  
+  //TODO maybe slip next part up
   i = SERIAL_WAIT_TIME_IN_MS;
-  // wait for the final part, +1 for END_OF_DATA
-  while (Serial.available() < sendlen+1) {
+  while( Serial.available() < sendlen ) {  // wait for the final part
     delay(1); 
     if( i-- == 0 ) {
       errorCounter++;
       return 0;
     }
   }
-
-  for (i=HEADER_SIZE; i<HEADER_SIZE+sendlen+1; i++) 
+  for( i=HEADER_SIZE; i<6+sendlen; i++ ) 
     str[i] = Serial.read();       // fill it up
 
   //check if data is correct, 0x20 = END_OF_DATA
-  b = str[HEADER_SIZE+sendlen];
-  if( b != 0x20 ) {
+  uint8_t dataEndMarker = str[HEADER_SIZE+sendlen];
+  if( dataEndMarker != 0x20 ) {
     errorCounter++;
     return 0;
   }
