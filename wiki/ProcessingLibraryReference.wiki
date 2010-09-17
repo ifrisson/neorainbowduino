@@ -9,6 +9,11 @@ Keywords arduino, rainbowduino
 
 Reference. a copy of the reference is included in the .zip as well.
 
+==Needed Hardware==
+  * 1x Arduino
+  * 1..n rainbowduino(s) from seeedstudio.
+  * some cables
+
 ==Examples==
 
 Find a list of examples in the current distribution of neorainbowduino, or have a look at them by following the links below.
