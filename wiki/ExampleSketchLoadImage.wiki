@@ -25,6 +25,8 @@ void setup()
   List<Integer> i2cDest = new ArrayList<Integer>();
   i2cDest.add(6);
   try {
+    //let the library search all available serial port and try to send
+    //the initialize image to all slaves
     rainbowduino.initPort(i2cDest);
   } catch (Exception e) {
     //if an error occours handle it here!
@@ -40,7 +42,7 @@ void setup()
   //check Issue 332: PImage resize is not pretty
   pimage.resize(8, 8);
   
-  //get image data and store it in out rgb int array
+  //get image data
   pimage.loadPixels();
   System.arraycopy(pimage.pixels, 0, simpleImage, 0, 8*8);
   pimage.updatePixels();
