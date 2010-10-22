@@ -20,7 +20,19 @@ void setup()
   
   //initialize library
   rainbowduino = new Rainbowduino(this);
-  rainbowduino.initPort();
+  
+  //create a list with i2c slave destination (=rainbowduinos)
+  List<Integer> i2cDest = new ArrayList<Integer>();
+  i2cDest.add(6);
+  try {
+    rainbowduino.initPort(i2cDest);
+  } catch (Exception e) {
+    //if an error occours handle it here!
+    //we just print out the stacktrace and exit.
+    e.printStackTrace();
+    println("failed to initialize serial port - exit!");
+    exit();
+  }
 
   //load+resize image
   PImage pimage = loadImage("hsv.jpg");
@@ -28,7 +40,7 @@ void setup()
   //check Issue 332: PImage resize is not pretty
   pimage.resize(8, 8);
   
-  //get image data
+  //get image data and store it in out rgb int array
   pimage.loadPixels();
   System.arraycopy(pimage.pixels, 0, simpleImage, 0, 8*8);
   pimage.updatePixels();
@@ -39,5 +51,6 @@ void setup()
 void draw()
 {
 }
+
 
 }}}
