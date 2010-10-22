@@ -1,6 +1,6 @@
 =neorainbowduino=
 
-A library by Michael Vogt for the programming environment processing. Last update, 09/16/2010. 
+A library by Michael Vogt for the programming environment processing. 
 
 ==Installation==
 
@@ -14,13 +14,6 @@ Reference. a copy of the reference is included in the .zip as well.
   * 1..n rainbowduino(s) from seeedstudio.
   * some cables
 
-==Examples==
+==Documentation==
 
-Find a list of examples in the current distribution of neorainbowduino, or have a look at them by following the links below.
-  * neorainbowduino_loadimage
-  * neorainbowduino_simple
-
-Tested Platform osx,windows  
-Processing 1.0+  
-Dependencies 
-by Michael Vogt, (c) 2010.
+Check http://www.neophob.com/neorainbowduino for a description of the library.
