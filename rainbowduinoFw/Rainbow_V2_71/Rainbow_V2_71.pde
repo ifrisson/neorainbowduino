@@ -170,9 +170,9 @@ void displayNextLine() {
 
 // scan one line, open the scaning row
 void draw_next_line() {
-  DISABLE_OE						//disable MBI5168 output (matrix output blanked)
+  DISABLE_OE						        //disable MBI5168 output (matrix output blanked)
   //enable_row();				                //setup super source driver (trigger the VCC power lane)
-  CLOSE_ALL_LINE					//super source driver, select all outputs off
+  CLOSE_ALL_LINE					        //super source driver, select all outputs off
   open_line(g_line);
 
   LE_HIGH							//enable serial input for the MBI5168
