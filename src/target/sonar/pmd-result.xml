@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<pmd version="4.2.5" timestamp="2010-12-19T00:01:53.577">
+<file name="/Users/michu/code/workspace/neorainbowduino/processingLib/src/com/neophob/lib/rainbowduino/Rainbowduino.java">
+<violation beginline="92" endline="92" begincolumn="21" endcolumn="42" rule="UnusedPrivateField" ruleset="Unused Code Rules" package="com.neophob.lib.rainbowduino" class="Rainbowduino" variable="connectionErrorCounter" externalInfoUrl="http://pmd.sourceforge.net/rules/unusedcode.html#UnusedPrivateField" priority="3">
+Avoid unused private fields such as 'connectionErrorCounter'.
+</violation>
+<violation beginline="171" endline="171" begincolumn="25" endcolumn="60" rule="ConstructorCallsOverridableMethod" ruleset="Design Rules" package="com.neophob.lib.rainbowduino" class="Rainbowduino" externalInfoUrl="http://pmd.sourceforge.net/rules/design.html#ConstructorCallsOverridableMethod" priority="3">
+Overridable method 'ping' called during object construction
+</violation>
+<violation beginline="179" endline="179" begincolumn="41" endcolumn="76" rule="ConstructorCallsOverridableMethod" ruleset="Design Rules" package="com.neophob.lib.rainbowduino" class="Rainbowduino" externalInfoUrl="http://pmd.sourceforge.net/rules/design.html#ConstructorCallsOverridableMethod" priority="3">
+Overridable method 'ping' called during object construction
+</violation>
+<violation beginline="554" endline="556" begincolumn="17" endcolumn="17" rule="AvoidArrayLoops" ruleset="Optimization Rules" package="com.neophob.lib.rainbowduino" class="Rainbowduino" method="sendFrame" externalInfoUrl="http://pmd.sourceforge.net/rules/optimizations.html#AvoidArrayLoops" priority="3">
+System.arraycopy is more efficient
+</violation>
+</file>
+<file name="/Users/michu/code/workspace/neorainbowduino/processingLib/src/com/neophob/lib/rainbowduino/RainbowduinoHelper.java">
+<violation beginline="35" endline="69" begincolumn="24" endcolumn="10" rule="SuspiciousConstantFieldName" ruleset="Naming Rules" package="com.neophob.lib.rainbowduino" class="RainbowduinoHelper" variable="GAMMA_TAB" externalInfoUrl="http://pmd.sourceforge.net/rules/naming.html#SuspiciousConstantFieldName" priority="3">
+The field name indicates a constant but its modifiers do not
+</violation>
+</file>
+<file name="/Users/michu/code/workspace/neorainbowduino/processingLib/src/com/neophob/lib/rainbowduino/test/TestCompress.java">
+<violation beginline="21" endline="21" begincolumn="25" endcolumn="40" rule="SystemPrintln" ruleset="Java Logging Rules" package="com.neophob.lib.rainbowduino.test" class="TestCompress" method="printCompressed" externalInfoUrl="http://pmd.sourceforge.net/rules/logging-java.html#SystemPrintln" priority="3">
+System.out.print is used
+</violation>
+<violation beginline="23" endline="23" begincolumn="17" endcolumn="34" rule="SystemPrintln" ruleset="Java Logging Rules" package="com.neophob.lib.rainbowduino.test" class="TestCompress" method="printCompressed" externalInfoUrl="http://pmd.sourceforge.net/rules/logging-java.html#SystemPrintln" priority="3">
+System.out.print is used
+</violation>
+</file>
+<file name="/Users/michu/code/workspace/neorainbowduino/processingLib/src/com/neophob/lib/rainbowduino/test/TestI2cScanner.java">
+<violation beginline="26" endline="26" begincolumn="17" endcolumn="34" rule="SystemPrintln" ruleset="Java Logging Rules" package="com.neophob.lib.rainbowduino.test" class="TestI2cScanner" method="setup" externalInfoUrl="http://pmd.sourceforge.net/rules/logging-java.html#SystemPrintln" priority="3">
+System.out.print is used
+</violation>
+<violation beginline="28" endline="28" begincolumn="17" endcolumn="34" rule="SystemPrintln" ruleset="Java Logging Rules" package="com.neophob.lib.rainbowduino.test" class="TestI2cScanner" method="setup" externalInfoUrl="http://pmd.sourceforge.net/rules/logging-java.html#SystemPrintln" priority="3">
+System.out.print is used
+</violation>
+</file>
+<file name="/Users/michu/code/workspace/neorainbowduino/processingLib/src/com/neophob/lib/rainbowduino/test/TestMD5.java">
+<violation beginline="19" endline="19" begincolumn="17" endcolumn="34" rule="SystemPrintln" ruleset="Java Logging Rules" package="com.neophob.lib.rainbowduino.test" class="TestMD5" method="main" externalInfoUrl="http://pmd.sourceforge.net/rules/logging-java.html#SystemPrintln" priority="3">
+System.out.print is used
+</violation>
+<violation beginline="20" endline="20" begincolumn="17" endcolumn="34" rule="SystemPrintln" ruleset="Java Logging Rules" package="com.neophob.lib.rainbowduino.test" class="TestMD5" method="main" externalInfoUrl="http://pmd.sourceforge.net/rules/logging-java.html#SystemPrintln" priority="3">
+System.out.print is used
+</violation>
+<violation beginline="21" endline="21" begincolumn="17" endcolumn="34" rule="SystemPrintln" ruleset="Java Logging Rules" package="com.neophob.lib.rainbowduino.test" class="TestMD5" method="main" externalInfoUrl="http://pmd.sourceforge.net/rules/logging-java.html#SystemPrintln" priority="3">
+System.out.print is used
+</violation>
+</file>
+<file name="/Users/michu/code/workspace/neorainbowduino/processingLib/src/com/neophob/lib/rainbowduino/test/TestOutput.java">
+<violation beginline="40" endline="40" begincolumn="25" endcolumn="42" rule="SystemPrintln" ruleset="Java Logging Rules" package="com.neophob.lib.rainbowduino.test" class="TestOutput" method="setup" externalInfoUrl="http://pmd.sourceforge.net/rules/logging-java.html#SystemPrintln" priority="3">
+System.out.print is used
+</violation>
+<violation beginline="42" endline="42" begincolumn="25" endcolumn="43" rule="AvoidPrintStackTrace" ruleset="Java Logging Rules" package="com.neophob.lib.rainbowduino.test" class="TestOutput" method="setup" externalInfoUrl="http://pmd.sourceforge.net/rules/logging-java.html#AvoidPrintStackTrace" priority="3">
+Avoid printStackTrace(); use a logger call instead.
+</violation>
+<violation beginline="49" endline="49" begincolumn="22" endcolumn="32" rule="UnusedPrivateMethod" ruleset="Unused Code Rules" package="com.neophob.lib.rainbowduino.test" class="TestOutput" method="slp" externalInfoUrl="http://pmd.sourceforge.net/rules/unusedcode.html#UnusedPrivateMethod" priority="3">
+Avoid unused private methods such as 'slp(int)'.
+</violation>
+<violation beginline="58" endline="58" begincolumn="17" endcolumn="56" rule="IfStmtsMustUseBraces" ruleset="Braces Rules" package="com.neophob.lib.rainbowduino.test" class="TestOutput" method="draw" externalInfoUrl="http://pmd.sourceforge.net/rules/braces.html#IfStmtsMustUseBraces" priority="3">
+Avoid using if statements without curly braces
+</violation>
+<violation beginline="67" endline="67" begincolumn="17" endcolumn="31" rule="IfStmtsMustUseBraces" ruleset="Braces Rules" package="com.neophob.lib.rainbowduino.test" class="TestOutput" method="draw" externalInfoUrl="http://pmd.sourceforge.net/rules/braces.html#IfStmtsMustUseBraces" priority="3">
+Avoid using if statements without curly braces
+</violation>
+<violation beginline="77" endline="77" begincolumn="31" endcolumn="45" rule="IfElseStmtsMustUseBraces" ruleset="Braces Rules" package="com.neophob.lib.rainbowduino.test" class="TestOutput" method="draw" externalInfoUrl="http://pmd.sourceforge.net/rules/braces.html#IfElseStmtsMustUseBraces" priority="3">
+Avoid using if...else statements without curly braces
+</violation>
+<violation beginline="77" endline="77" begincolumn="52" endcolumn="61" rule="IfElseStmtsMustUseBraces" ruleset="Braces Rules" package="com.neophob.lib.rainbowduino.test" class="TestOutput" method="draw" externalInfoUrl="http://pmd.sourceforge.net/rules/braces.html#IfElseStmtsMustUseBraces" priority="3">
+Avoid using if...else statements without curly braces
+</violation>
+<violation beginline="78" endline="78" begincolumn="31" endcolumn="45" rule="IfElseStmtsMustUseBraces" ruleset="Braces Rules" package="com.neophob.lib.rainbowduino.test" class="TestOutput" method="draw" externalInfoUrl="http://pmd.sourceforge.net/rules/braces.html#IfElseStmtsMustUseBraces" priority="3">
+Avoid using if...else statements without curly braces
+</violation>
+<violation beginline="78" endline="78" begincolumn="52" endcolumn="61" rule="IfElseStmtsMustUseBraces" ruleset="Braces Rules" package="com.neophob.lib.rainbowduino.test" class="TestOutput" method="draw" externalInfoUrl="http://pmd.sourceforge.net/rules/braces.html#IfElseStmtsMustUseBraces" priority="3">
+Avoid using if...else statements without curly braces
+</violation>
+<violation beginline="80" endline="80" begincolumn="17" endcolumn="38" rule="IfStmtsMustUseBraces" ruleset="Braces Rules" package="com.neophob.lib.rainbowduino.test" class="TestOutput" method="draw" externalInfoUrl="http://pmd.sourceforge.net/rules/braces.html#IfStmtsMustUseBraces" priority="3">
+Avoid using if statements without curly braces
+</violation>
+<violation beginline="81" endline="81" begincolumn="17" endcolumn="38" rule="IfStmtsMustUseBraces" ruleset="Braces Rules" package="com.neophob.lib.rainbowduino.test" class="TestOutput" method="draw" externalInfoUrl="http://pmd.sourceforge.net/rules/braces.html#IfStmtsMustUseBraces" priority="3">
+Avoid using if statements without curly braces
+</violation>
+<violation beginline="87" endline="87" begincolumn="17" endcolumn="34" rule="SystemPrintln" ruleset="Java Logging Rules" package="com.neophob.lib.rainbowduino.test" class="TestOutput" method="draw" externalInfoUrl="http://pmd.sourceforge.net/rules/logging-java.html#SystemPrintln" priority="3">
+System.out.print is used
+</violation>
+</file>
+<file name="/Users/michu/code/workspace/neorainbowduino/processingLib/src/com/neophob/lib/rainbowduino/test/TestPApplet.java">
+<violation beginline="12" endline="12" begincolumn="16" endcolumn="30" rule="SuspiciousConstantFieldName" ruleset="Naming Rules" package="com.neophob.lib.rainbowduino.test" class="TestPApplet" variable="SIZE" externalInfoUrl="http://pmd.sourceforge.net/rules/naming.html#SuspiciousConstantFieldName" priority="3">
+The field name indicates a constant but its modifiers do not
+</violation>
+<violation beginline="20" endline="20" begincolumn="25" endcolumn="42" rule="SystemPrintln" ruleset="Java Logging Rules" package="com.neophob.lib.rainbowduino.test" class="TestPApplet" method="setup" externalInfoUrl="http://pmd.sourceforge.net/rules/logging-java.html#SystemPrintln" priority="3">
+System.out.print is used
+</violation>
+<violation beginline="22" endline="22" begincolumn="25" endcolumn="43" rule="AvoidPrintStackTrace" ruleset="Java Logging Rules" package="com.neophob.lib.rainbowduino.test" class="TestPApplet" method="setup" externalInfoUrl="http://pmd.sourceforge.net/rules/logging-java.html#AvoidPrintStackTrace" priority="3">
+Avoid printStackTrace(); use a logger call instead.
+</violation>
+</file>
+<file name="/Users/michu/code/workspace/neorainbowduino/processingLib/src/com/neophob/lib/rainbowduino/test/TestRoundtrip.java">
+<violation beginline="35" endline="35" begincolumn="25" endcolumn="42" rule="SystemPrintln" ruleset="Java Logging Rules" package="com.neophob.lib.rainbowduino.test" class="TestRoundtrip" method="setup" externalInfoUrl="http://pmd.sourceforge.net/rules/logging-java.html#SystemPrintln" priority="3">
+System.out.print is used
+</violation>
+<violation beginline="37" endline="37" begincolumn="25" endcolumn="43" rule="AvoidPrintStackTrace" ruleset="Java Logging Rules" package="com.neophob.lib.rainbowduino.test" class="TestRoundtrip" method="setup" externalInfoUrl="http://pmd.sourceforge.net/rules/logging-java.html#AvoidPrintStackTrace" priority="3">
+Avoid printStackTrace(); use a logger call instead.
+</violation>
+<violation beginline="46" endline="46" begincolumn="17" endcolumn="34" rule="SystemPrintln" ruleset="Java Logging Rules" package="com.neophob.lib.rainbowduino.test" class="TestRoundtrip" method="draw" externalInfoUrl="http://pmd.sourceforge.net/rules/logging-java.html#SystemPrintln" priority="3">
+System.out.print is used
+</violation>
+</file>
+<file name="/Users/michu/code/workspace/neorainbowduino/processingLib/src/com/neophob/lib/rainbowduino/test/TestSerial.java">
+<violation beginline="36" endline="36" begincolumn="25" endcolumn="42" rule="SystemPrintln" ruleset="Java Logging Rules" package="com.neophob.lib.rainbowduino.test" class="TestSerial" method="setup" externalInfoUrl="http://pmd.sourceforge.net/rules/logging-java.html#SystemPrintln" priority="3">
+System.out.print is used
+</violation>
+<violation beginline="38" endline="38" begincolumn="25" endcolumn="43" rule="AvoidPrintStackTrace" ruleset="Java Logging Rules" package="com.neophob.lib.rainbowduino.test" class="TestSerial" method="setup" externalInfoUrl="http://pmd.sourceforge.net/rules/logging-java.html#AvoidPrintStackTrace" priority="3">
+Avoid printStackTrace(); use a logger call instead.
+</violation>
+<violation beginline="52" endline="52" begincolumn="22" endcolumn="32" rule="UnusedPrivateMethod" ruleset="Unused Code Rules" package="com.neophob.lib.rainbowduino.test" class="TestSerial" method="slp" externalInfoUrl="http://pmd.sourceforge.net/rules/unusedcode.html#UnusedPrivateMethod" priority="3">
+Avoid unused private methods such as 'slp(int)'.
+</violation>
+</file>
+<file name="/Users/michu/code/workspace/neorainbowduino/processingLib/src/com/neophob/lib/rainbowduino/test/TestSpeedyOutput.java">
+<violation beginline="35" endline="35" begincolumn="25" endcolumn="42" rule="SystemPrintln" ruleset="Java Logging Rules" package="com.neophob.lib.rainbowduino.test" class="TestSpeedyOutput" method="setup" externalInfoUrl="http://pmd.sourceforge.net/rules/logging-java.html#SystemPrintln" priority="3">
+System.out.print is used
+</violation>
+<violation beginline="37" endline="37" begincolumn="25" endcolumn="43" rule="AvoidPrintStackTrace" ruleset="Java Logging Rules" package="com.neophob.lib.rainbowduino.test" class="TestSpeedyOutput" method="setup" externalInfoUrl="http://pmd.sourceforge.net/rules/logging-java.html#AvoidPrintStackTrace" priority="3">
+Avoid printStackTrace(); use a logger call instead.
+</violation>
+<violation beginline="56" endline="56" begincolumn="25" endcolumn="40" rule="IfStmtsMustUseBraces" ruleset="Braces Rules" package="com.neophob.lib.rainbowduino.test" class="TestSpeedyOutput" method="draw" externalInfoUrl="http://pmd.sourceforge.net/rules/braces.html#IfStmtsMustUseBraces" priority="3">
+Avoid using if statements without curly braces
+</violation>
+<violation beginline="59" endline="59" begincolumn="22" endcolumn="23" rule="UnusedLocalVariable" ruleset="Unused Code Rules" package="com.neophob.lib.rainbowduino.test" class="TestSpeedyOutput" method="draw" variable="l1" externalInfoUrl="http://pmd.sourceforge.net/rules/unusedcode.html#UnusedLocalVariable" priority="3">
+Avoid unused local variables such as 'l1'.
+</violation>
+<violation beginline="60" endline="60" begincolumn="25" endcolumn="31" rule="UnusedLocalVariable" ruleset="Unused Code Rules" package="com.neophob.lib.rainbowduino.test" class="TestSpeedyOutput" method="draw" variable="result5" externalInfoUrl="http://pmd.sourceforge.net/rules/unusedcode.html#UnusedLocalVariable" priority="3">
+Avoid unused local variables such as 'result5'.
+</violation>
+<violation beginline="61" endline="61" begincolumn="22" endcolumn="23" rule="UnusedLocalVariable" ruleset="Unused Code Rules" package="com.neophob.lib.rainbowduino.test" class="TestSpeedyOutput" method="draw" variable="l2" externalInfoUrl="http://pmd.sourceforge.net/rules/unusedcode.html#UnusedLocalVariable" priority="3">
+Avoid unused local variables such as 'l2'.
+</violation>
+<violation beginline="62" endline="62" begincolumn="25" endcolumn="31" rule="UnusedLocalVariable" ruleset="Unused Code Rules" package="com.neophob.lib.rainbowduino.test" class="TestSpeedyOutput" method="draw" variable="result6" externalInfoUrl="http://pmd.sourceforge.net/rules/unusedcode.html#UnusedLocalVariable" priority="3">
+Avoid unused local variables such as 'result6'.
+</violation>
+</file>
+</pmd>
